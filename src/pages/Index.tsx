@@ -53,10 +53,10 @@ const Index = () => {
               <Button asChild size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
                 <Link to="/about">Learn More</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-800">
+              <Button asChild size="lg" className="bg-white text-green-800 hover:bg-gray-100 font-semibold">
                 <Link to="/get-involved">Become a Partner</Link>
               </Button>
-              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
+              <Button asChild size="lg" className="bg-green-600 hover:bg-green-700 text-white font-semibold">
                 <Link to="/donate">Donate</Link>
               </Button>
             </div>
@@ -169,7 +169,7 @@ const Index = () => {
             <Button asChild size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
               <Link to="/get-involved">Get Involved</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-800">
+            <Button asChild size="lg" className="bg-white text-green-800 hover:bg-gray-100 font-semibold">
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>

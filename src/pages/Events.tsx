@@ -61,7 +61,7 @@ const Events = () => {
                   We're planning exciting events and workshops. Check back soon or subscribe to our newsletter 
                   to be the first to know when new events are announced.
                 </p>
-                <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700">
+                <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold">
                   Subscribe for Updates
                 </Button>
               </CardContent>
@@ -110,7 +110,7 @@ const Events = () => {
               <p className="text-lg text-gray-600 mb-6">
                 View all our upcoming events, workshops, and community activities in one place.
               </p>
-              <Button size="lg" className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700">
+              <Button size="lg" className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-semibold">
                 View Full Calendar
               </Button>
             </div>
@@ -129,7 +129,7 @@ const Events = () => {
             <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
               Subscribe to Events
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-800">
+            <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100 font-semibold">
               Follow Us on Social Media
             </Button>
           </div>

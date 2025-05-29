@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Eye, Target, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Users, Eye, Target, Award, Mail, Linkedin } from "lucide-react";
 
 const About = () => {
   const values = [
@@ -8,6 +9,29 @@ const About = () => {
     { icon: Eye, title: "Transparency", description: "Promoting open and accountable practices in all our operations" },
     { icon: Target, title: "Participation", description: "Encouraging active community involvement in decision-making processes" },
     { icon: Award, title: "Sustainability", description: "Building long-term solutions for environmental and social challenges" }
+  ];
+
+  const teamMembers = [
+    {
+      name: "Team Member 1",
+      position: "Position Title",
+      image: "/lovable-uploads/cf966e55-6cc4-4b4d-bf4e-ff4f1e226a9e.png"
+    },
+    {
+      name: "Team Member 2", 
+      position: "Position Title",
+      image: "/lovable-uploads/e6f5e001-f219-4384-a57e-4690b942bbde.png"
+    },
+    {
+      name: "Team Member 3",
+      position: "Position Title", 
+      image: "/lovable-uploads/5b4ec25b-4d0b-4419-b7ee-d56c1705369e.png"
+    },
+    {
+      name: "Team Member 4",
+      position: "Position Title",
+      image: "/lovable-uploads/575441de-957c-493f-80fc-08b125e49600.png"
+    }
   ];
 
   return (
@@ -109,14 +133,49 @@ const About = () => {
               Passionate advocates, community educators, policy influencers, and young changemakers
             </p>
           </div>
-          <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white text-center">
-            <Users className="h-20 w-20 mx-auto mb-6" />
-            <h3 className="text-2xl font-bold mb-4">Meet Our Dedicated Team</h3>
-            <p className="text-lg max-w-3xl mx-auto">
-              Our diverse team brings together expertise in environmental science, public policy, 
-              community organizing, and youth development. Together, we work tirelessly to create 
-              positive change in communities across Kenya.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardContent className="p-6 text-center">
+                  <div className="mb-6">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                  <p className="text-green-600 font-medium mb-4">{member.position}</p>
+                  <div className="flex justify-center space-x-3">
+                    <Button size="sm" variant="outline" className="p-2">
+                      <Mail className="h-4 w-4" />
+                    </Button>
+                    <Button size="sm" variant="outline" className="p-2">
+                      <Linkedin className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-6">Ready to Make a Difference?</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Join our mission to create positive change in communities across Kenya through 
+            sustainable development and accountable governance.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
+              Get Involved Today
+            </Button>
+            <Button size="lg" className="bg-white text-green-800 hover:bg-gray-100 font-semibold">
+              Contact Our Team
+            </Button>
           </div>
         </div>
       </section>
