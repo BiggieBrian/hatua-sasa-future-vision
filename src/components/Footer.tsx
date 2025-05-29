@@ -1,6 +1,15 @@
-
 import { Link } from "react-router-dom";
-import { Leaf, Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Leaf,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 const Footer = () => {
   return (
@@ -16,7 +25,8 @@ const Footer = () => {
               <span className="text-xl font-bold">HatuaSasa Network</span>
             </div>
             <p className="text-gray-300 mb-4">
-              Empowering Citizens. Protecting the Planet. Strengthening Governance.
+              Empowering Citizens. Protecting the Planet. Strengthening
+              Governance.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 text-gray-300 hover:text-white cursor-pointer" />
@@ -31,11 +41,34 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-gray-300 hover:text-white">About HatuaSasa</Link></li>
-              <li><Link to="/programs" className="text-gray-300 hover:text-white">Programs</Link></li>
-              <li><Link to="/impact" className="text-gray-300 hover:text-white">Impact</Link></li>
-              <li><Link to="/resources" className="text-gray-300 hover:text-white">Resources</Link></li>
-              <li><Link to="/events" className="text-gray-300 hover:text-white">Events</Link></li>
+              <li>
+                <Link to="/about" className="text-gray-300 hover:text-white">
+                  About HatuaSasa
+                </Link>
+              </li>
+              <li>
+                <Link to="/programs" className="text-gray-300 hover:text-white">
+                  Programs
+                </Link>
+              </li>
+              <li>
+                <Link to="/impact" className="text-gray-300 hover:text-white">
+                  Impact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/resources"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link to="/events" className="text-gray-300 hover:text-white">
+                  Events
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -43,10 +76,35 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Get Involved</h3>
             <ul className="space-y-2">
-              <li><Link to="/get-involved" className="text-gray-300 hover:text-white">Volunteer</Link></li>
-              <li><Link to="/get-involved" className="text-gray-300 hover:text-white">Partner With Us</Link></li>
-              <li><Link to="/get-involved" className="text-gray-300 hover:text-white">Donate</Link></li>
-              <li><a href="#" className="text-gray-300 hover:text-white">Careers</a></li>
+              <li>
+                <Link
+                  to="/get-involved"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Volunteer
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/get-involved"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Partner With Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/get-involved"
+                  className="text-gray-300 hover:text-white"
+                >
+                  Donate
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white">
+                  Careers
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -60,11 +118,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-gray-300" />
-                <span className="text-gray-300">+254 xxx xxx xxx</span>
+                <span className="text-gray-300">+254 726 600 442</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-gray-300" />
-                <span className="text-gray-300">info@hatuasasa.org</span>
+                <span className="text-gray-300">hatuasasa24@gmail.com</span>
               </div>
             </div>
           </div>
@@ -72,11 +130,15 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-300 text-sm">
-            © 2024 HatuaSasa Network. All rights reserved.
+            © 2025 HatuaSasa Network. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-gray-300 hover:text-white text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-300 hover:text-white text-sm">Terms of Use</a>
+            <a href="#" className="text-gray-300 hover:text-white text-sm">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-gray-300 hover:text-white text-sm">
+              Terms of Use
+            </a>
           </div>
         </div>
       </div>
