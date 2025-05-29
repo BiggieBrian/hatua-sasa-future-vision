@@ -1,69 +1,9 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Clock, Users, TreePine, BookOpen, Award, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, TreePine, BookOpen, Award, Users } from "lucide-react";
 
 const Events = () => {
-  const upcomingEvents = [
-    {
-      title: "Community Climate Action Workshop",
-      date: "December 15, 2024",
-      time: "9:00 AM - 4:00 PM",
-      location: "Kiambu County Community Center",
-      participants: "50 expected",
-      description: "Learn practical strategies for community-led climate action and sustainable development.",
-      type: "Workshop",
-      icon: TreePine,
-      color: "from-green-500 to-green-600"
-    },
-    {
-      title: "Youth Leadership Summit",
-      date: "January 20, 2025",
-      time: "8:00 AM - 6:00 PM",
-      location: "University of Nairobi",
-      participants: "200 expected",
-      description: "Empowering young leaders with skills for civic engagement and community organizing.",
-      type: "Summit",
-      icon: Award,
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      title: "Participatory Budgeting Training",
-      date: "February 10, 2025",
-      time: "10:00 AM - 3:00 PM",
-      location: "Nakuru Town Hall",
-      participants: "80 expected",
-      description: "Training community members on how to participate effectively in county budget processes.",
-      type: "Training",
-      icon: BookOpen,
-      color: "from-purple-500 to-purple-600"
-    }
-  ];
-
-  const pastEvents = [
-    {
-      title: "National Civic Engagement Week",
-      date: "October 2024",
-      participants: "1,500+ participants",
-      description: "Week-long series of events promoting civic participation across 10 counties.",
-      impact: "500 new voter registrations"
-    },
-    {
-      title: "Tree Planting Marathon",
-      date: "September 2024",
-      participants: "800 volunteers",
-      description: "Community-wide tree planting event in partnership with Kenya Forest Service.",
-      impact: "2,000 trees planted"
-    },
-    {
-      title: "Women in Governance Forum",
-      date: "August 2024",
-      participants: "300 women leaders",
-      description: "Empowering women to take active roles in local and national governance.",
-      impact: "50 women trained as advocates"
-    }
-  ];
-
   const eventTypes = [
     {
       icon: TreePine,
@@ -105,56 +45,27 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Upcoming Events */}
+      {/* No Current Events */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
-            <p className="text-xl text-gray-600">Don't miss these opportunities to get involved</p>
+            <p className="text-xl text-gray-600">Stay tuned for upcoming opportunities to get involved</p>
           </div>
-          <div className="space-y-8">
-            {upcomingEvents.map((event, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-                    <div className={`bg-gradient-to-r ${event.color} w-16 h-16 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <event.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2 sm:mb-0">{event.title}</h3>
-                        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                          {event.type}
-                        </span>
-                      </div>
-                      <p className="text-gray-600 mb-4">{event.description}</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                        <div className="flex items-center space-x-2 text-gray-700">
-                          <Calendar className="h-4 w-4 text-green-600" />
-                          <span className="text-sm">{event.date}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-gray-700">
-                          <Clock className="h-4 w-4 text-blue-600" />
-                          <span className="text-sm">{event.time}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-gray-700">
-                          <MapPin className="h-4 w-4 text-red-600" />
-                          <span className="text-sm">{event.location}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-gray-700">
-                          <Users className="h-4 w-4 text-purple-600" />
-                          <span className="text-sm">{event.participants}</span>
-                        </div>
-                      </div>
-                      <Button className="group">
-                        Register Now
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-2xl mx-auto">
+            <Card className="text-center">
+              <CardContent className="p-12">
+                <Calendar className="h-16 w-16 text-gray-400 mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">No Events Currently Scheduled</h3>
+                <p className="text-gray-600 mb-6">
+                  We're planning exciting events and workshops. Check back soon or subscribe to our newsletter 
+                  to be the first to know when new events are announced.
+                </p>
+                <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700">
+                  Subscribe for Updates
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -185,42 +96,8 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Past Events */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recent Events</h2>
-            <p className="text-xl text-gray-600">Highlights from our recent community engagement activities</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pastEvents.map((event, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{event.title}</h3>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center space-x-2 text-gray-600">
-                      <Calendar className="h-4 w-4" />
-                      <span className="text-sm">{event.date}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 text-gray-600">
-                      <Users className="h-4 w-4" />
-                      <span className="text-sm">{event.participants}</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-4">{event.description}</p>
-                  <div className="bg-yellow-100 border-l-4 border-yellow-500 p-3 rounded">
-                    <div className="text-yellow-800 font-semibold text-sm">Impact:</div>
-                    <div className="text-yellow-700 text-sm">{event.impact}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Event Calendar */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Event Calendar</h2>

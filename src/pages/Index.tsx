@@ -54,10 +54,10 @@ const Index = () => {
                 <Link to="/about">Learn More</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-800">
-                <Link to="/get-involved">Partner With Us</Link>
+                <Link to="/get-involved">Become a Partner</Link>
               </Button>
               <Button asChild size="lg" className="bg-green-600 hover:bg-green-700">
-                <Link to="/get-involved">Donate</Link>
+                <Link to="/donate">Donate</Link>
               </Button>
             </div>
           </div>
