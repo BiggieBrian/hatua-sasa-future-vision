@@ -12,6 +12,7 @@ import GetInvolved from "./pages/GetInvolved";
 import Resources from "./pages/Resources";
 import Events from "./pages/Events";
 import Contact from "./pages/Contact";
+import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/resources" element={<Resources />} />
               <Route path="/events" element={<Events />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/donate" element={<Donate />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

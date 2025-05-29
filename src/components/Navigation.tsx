@@ -47,8 +47,8 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-            <Button className="bg-gradient-to-r from-green-600 to-yellow-500 hover:from-green-700 hover:to-yellow-600">
-              Donate
+            <Button asChild className="bg-gradient-to-r from-green-600 to-yellow-500 hover:from-green-700 hover:to-yellow-600">
+              <Link to="/donate">Donate</Link>
             </Button>
           </div>
 
@@ -81,8 +81,8 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button className="w-full mt-4 bg-gradient-to-r from-green-600 to-yellow-500 hover:from-green-700 hover:to-yellow-600">
-                Donate
+              <Button asChild className="w-full mt-4 bg-gradient-to-r from-green-600 to-yellow-500 hover:from-green-700 hover:to-yellow-600">
+                <Link to="/donate">Donate</Link>
               </Button>
             </div>
           </div>
