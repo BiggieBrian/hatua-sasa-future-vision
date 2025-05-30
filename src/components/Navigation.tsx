@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,7 @@ const Navigation = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img
-                src="../../public/images/logo.png"
+                src="/lovable-uploads/eba3dcf4-cd07-492d-a9a4-e54761b09921.png"
                 alt="HatuaSasa Network"
                 className="w-20 h-20"
               />
