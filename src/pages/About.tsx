@@ -1,8 +1,20 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Users, Eye, Target, Award, Mail, Linkedin } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Users, Eye, Target, Award, Mail, Linkedin, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const About = () => {
+  const [openBios, setOpenBios] = useState<Record<string, boolean>>({});
+
+  const toggleBio = (memberName: string) => {
+    setOpenBios(prev => ({
+      ...prev,
+      [memberName]: !prev[memberName]
+    }));
+  };
+
   const values = [
     {
       icon: Users,
@@ -30,29 +42,129 @@ const About = () => {
     },
   ];
 
-  const teamMembers = [
+  const advisoryBoardMembers = [
     {
       name: "Dominic Omboga",
       position: "Advisory Board Chairman",
-      image: "../../public/images/Dominic Omboga - Advisory Board Chairman.png",
+      image: "/public/images/Dominic Omboga - Advisory Board Chairman.png",
+      bio: ""
     },
     {
       name: "Amos Matagaro",
-      position: "Executive Director",
-      image:
-        "../../public/images/Sen. Amos Matagaro Ogwankwa - Executive Director.png",
+      position: "Executive Director & Founder",
+      image: "/public/images/Sen. Amos Matagaro Ogwankwa - Executive Director.png",
+      bio: `Amos Ogwankwa Matagaro is a distinguished youth leader, civic educator, and governance advocate with a deep commitment to youth empowerment, climate justice, and community-led development. He currently serves as the Executive Director and Founder of HatuaSasa Network, where he leads programs that promote civic participation, leadership training, and social transformation among young people across Kenya.
+
+He holds the position of Youth Senator for Kisii County under the Youth Senate Kenya, where he champions policy and development frameworks that enhance youth inclusion in governance and economic advancement.
+
+Amos is the recipient of a Certificate of Achievement from the United Nations Foundation, awarded for leading a youth action group that gained the most public support during the Big Brainstorm 2023. He also secured a climate advocacy grant from the National Democratic Institute (NDI) in 2024, and previously earned a prestigious leadership scholarship from the High Commission of India for executive training in New Delhi.
+
+His professional development includes rigorous training through globally recognized institutions:
+• Political Parties Leadership Institute, National Democratic Institute (2023–2024)
+• International Training Programme on Developing Human Capabilities, NILRD, India (2022)
+• Nairobi Summer School on Climate Justice, Kenyatta University (2023)
+• Youth Leadership Academy, International Republican Institute (2021)
+
+Amos has a rich leadership history, including service as Senior Personal Secretary in the Office of the Governor – Nyamira County (2020–2023), where he enhanced executive coordination and stakeholder management. He also served as Branch Secretary of the Amani National Congress (ANC) in Kisii County and was appointed to the National Youth Delegation at the 5th Devolution Conference (2018), where he contributed to youth policy discussions on national development.
+
+Previously, he was the Chairperson of the Mugirango Youth Network and Development Association, where he mobilized student leaders and advanced community-focused initiatives. He also held key positions within student leadership, including Secretary General of the Kenyatta University Kisii County Students Association and Chairperson of the South Mugirango Constituency Students Association.
+
+Amos continues to contribute through voluntary community service, including education advocacy, youth mentorship, and environmental action. He is widely respected for his inclusive leadership, commitment to impact, and dedication to creating opportunities for the next generation.`
     },
     {
-      name: "Wycliff Bichanga",
+      name: "Cherotich Rono",
       position: "Member",
-      image: "../../public/images/CPA. Wycliff Bichang  - Member.png",
+      image: "/public/images/CPA. Wycliff Bichang  - Member.png",
+      bio: `Cherotich Rono is an experienced program management specialist with a strong background in international affairs, focusing on democracy and governance, elections, inclusion programming, public finance management capacity building, institutional support and sub-grant management. She received legislative training from the Center for International Development at the State University of New York, during which she was attached to the Kenya National Assembly for one year. 
+
+Benedictus has played a key role in developing leadership training curricula used to train political aspirants across two election cycles. She was instrumental in the formation of the caucus of Kenya Young Members of County Assemblies (KYMCA) and establishment of over 20 county-level caucuses to enhance youth participation in leadership. She also spearheaded the creation of Inter-Party Youth Forums (IPYF) in 12 counties, fostering dialogue and engagement between youth and governments. 
+
+Benedictus has managed nationwide election agent training in collaboration with the Oslo Centre, the Office of the Registrar of Political Parties, and the Independent Electoral and Boundaries Commission, ensuring compliance with updated laws and procedures. Additionally, she contributed to the induction of women Members of County Assemblies, leading to the formation of women's caucuses and strengthening their legislative roles. 
+
+She currently serves as the program lead overseeing NDI's fiscal transparency and accountability and youth programming in Kenya. In addition, she coordinates exchanges between the Kenya National Assembly and the U.S. House of Representatives through the House Democracy Partnership.`
     },
     {
       name: "Benson Simba",
       position: "Member",
-      image: "../../public/images/Mr. Benson Simba - Member.png",
+      image: "/public/images/Mr. Benson Simba - Member.png",
+      bio: ""
     },
   ];
+
+  const secretariatMembers = [
+    {
+      name: "Nyabuto Hamphrey Okanga",
+      position: "Senior Principal Program Officer",
+      image: "/lovable-uploads/nyabuto-hamphrey.png",
+      bio: `Nyabuto Hamphrey Okanga is a passionate Kenyan public health professional dedicated to climate justice through community-led solutions. He actively works to empower vulnerable communities to respond to climate related challenges. His grassroots approach, data-driven mindset, and commitment to sustainability align with HatuaSasa's mission to build citizen-led climate resilience. Nyabuto sees climate action not as a crisis, but as a powerful opportunity to transform lives and create lasting change from the ground up.`
+    },
+    {
+      name: "Brian Achira Ongaga",
+      position: "Head Of ICT Department",
+      image: "/public/images/Mr. Benson Simba - Member.png", // Placeholder image
+      bio: "Coming soon"
+    },
+  ];
+
+  const renderTeamMember = (member: any, index: number) => (
+    <Card
+      key={index}
+      className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+    >
+      <CardContent className="p-6 text-center">
+        <div className="mb-6">
+          <img
+            src={member.image}
+            alt={member.name}
+            className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
+          />
+        </div>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">
+          {member.name}
+        </h3>
+        <p className="text-green-600 font-medium mb-4">
+          {member.position}
+        </p>
+        
+        {member.bio && (
+          <Collapsible 
+            open={openBios[member.name]} 
+            onOpenChange={() => toggleBio(member.name)}
+            className="mb-4"
+          >
+            <CollapsibleTrigger asChild>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="w-full mb-3 hover:bg-green-50 hover:border-green-300"
+              >
+                {openBios[member.name] ? "Hide Bio" : "Read Bio"}
+                <ChevronDown 
+                  className={`h-4 w-4 ml-2 transition-transform duration-200 ${
+                    openBios[member.name] ? "rotate-180" : ""
+                  }`} 
+                />
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="text-left">
+              <div className="bg-gray-50 p-4 rounded-lg text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+                {member.bio}
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+        )}
+
+        <div className="flex justify-center space-x-3">
+          <Button size="sm" variant="outline" className="p-2 hover:bg-green-50 hover:border-green-300">
+            <Mail className="h-4 w-4" />
+          </Button>
+          <Button size="sm" variant="outline" className="p-2 hover:bg-green-50 hover:border-green-300">
+            <Linkedin className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
+  );
 
   return (
     <div className="min-h-screen">
@@ -167,47 +279,32 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Advisory Board Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Team</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Advisory Board</h2>
             <p className="text-xl text-gray-600">
-              Passionate advocates, community educators, policy influencers, and
-              young changemakers
+              Experienced leaders guiding our strategic direction and impact
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="mb-6">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-white shadow-lg"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-green-600 font-medium mb-4">
-                    {member.position}
-                  </p>
-                  <div className="flex justify-center space-x-3">
-                    <Button size="sm" variant="outline" className="p-2">
-                      <Mail className="h-4 w-4" />
-                    </Button>
-                    <Button size="sm" variant="outline" className="p-2">
-                      <Linkedin className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {advisoryBoardMembers.map((member, index) => renderTeamMember(member, index))}
+          </div>
+        </div>
+      </section>
+
+      {/* Secretariat Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Secretariat</h2>
+            <p className="text-xl text-gray-600">
+              Dedicated professionals driving our day-to-day operations and programs
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            {secretariatMembers.map((member, index) => renderTeamMember(member, index))}
           </div>
         </div>
       </section>
